@@ -15,7 +15,7 @@ export default function Map({ apiKey, venueKey }) {
       w-postalcode=""
       w-radius="25"
       w-countrycode="FR"
-      w-city="Marseille"
+      w-city=""
       w-period="year"
       w-layout="vertical"
       w-attractionid=""
@@ -26,7 +26,7 @@ export default function Map({ apiKey, venueKey }) {
       w-proportion="custom"
       w-geoposition="off"
       w-source=""
-      w-country=""
+      w-country="FR"
       w-latlong=""
     ></div>
   );

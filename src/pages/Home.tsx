@@ -13,6 +13,7 @@ export default function Home() {
   const [venues, setVenues] = useState<any[]>([]);
 
   const getVenues = () => {
+    // const [newVenues, setNewVenues] = [...venues];
     axios
       .get(apiUrl + apiKey)
       .then((res) => {
@@ -23,22 +24,24 @@ export default function Home() {
         console.log(err);
       });
 
-    console.log("VENUES : ", venues);
+    // setVenues(newVenues);
+    console.log("VENUES HOME : ", venues);
   };
 
   useEffect(() => {
     getVenues();
+    console.log("VENUES HOME 2 : ", venues);
   }, []);
 
   return (
-    <Grid>
+    <Grid container>
       {venues && (
-        <div>
+        <Grid container justifyContent={"space-around"}>
           {venues.map((venue: any) => {
             return <VenueCard key={venue.id} venueProp={venue} />;
             // return <p>Salut</p>;
           })}
-        </div>
+        </Grid>
       )}
     </Grid>
   );

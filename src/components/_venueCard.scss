@@ -7,4 +7,10 @@
     font-size: 20px;
     color: white;
   }
+  .MuiCardContent-root {
+    .MuiTypography-root {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
 }

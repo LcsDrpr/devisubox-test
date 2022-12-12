@@ -23,19 +23,19 @@ export default function VenueCard(venueProp: any) {
           {venue.postalCode && (
             <Grid container alignItems={"center"} justifyContent={"center"}>
               <Grid item>
-                <p>Code Postal : </p>{" "}
+                <Typography variant="body2">Code Postal : </Typography>{" "}
               </Grid>
               <Grid item>
-                <Typography> {venue.postalCode}</Typography>
+                <Typography variant="body1"> {venue.postalCode}</Typography>
               </Grid>
             </Grid>
           )}
           <Grid container alignItems={"center"} justifyContent={"center"}>
             <Grid item>
-              <p>Ville : </p>{" "}
+              <Typography variant="body2">Ville : </Typography>{" "}
             </Grid>
             <Grid item>
-              <Typography> {venue.city.name}</Typography>
+              <Typography variant="body1"> {venue.city.name}</Typography>
             </Grid>
           </Grid>
         </CardContent>

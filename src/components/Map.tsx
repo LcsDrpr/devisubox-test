@@ -1,0 +1,33 @@
+export default function Map({ apiKey, venueKey }) {
+  return (
+    <div
+      w-type="map"
+      w-tmapikey={apiKey}
+      w-googleapikey="AIzaSyDhLHq3r1--vZeG7mjWjjYfaYM8tgjNbHo"
+      w-keyword=""
+      w-theme="simple"
+      w-colorscheme="light"
+      w-width="600"
+      w-height="400"
+      w-size="25"
+      w-border="1"
+      w-borderradius="4"
+      w-postalcode=""
+      w-radius="25"
+      w-countrycode="FR"
+      w-city="Marseille"
+      w-period="year"
+      w-layout="vertical"
+      w-attractionid=""
+      w-promoterid=""
+      w-venueid={venueKey}
+      w-affiliateid=""
+      w-segmentid=""
+      w-proportion="custom"
+      w-geoposition="off"
+      w-source=""
+      w-country=""
+      w-latlong=""
+    ></div>
+  );
+}

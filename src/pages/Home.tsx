@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import VenueCard from "../components/VenueCard";
+import Map from "../components/Map";
 import { Grid } from "@mui/material";
 
 export default function Home() {
-  const cityExample = "Marseille";
+  const venueKey = "Marseille";
   const apiUrl =
     "https://app.ticketmaster.com/discovery/v2/venues.json?keyword=" +
-    cityExample +
+    venueKey +
     "&apikey=";
   const apiKey = "8X6HVGOGo28k9tEihXCuPGKj1ty0aMBd";
   const [venues, setVenues] = useState<any[]>([]);
 
   const getVenues = () => {
-    // const [newVenues, setNewVenues] = [...venues];
     axios
       .get(apiUrl + apiKey)
       .then((res) => {
@@ -23,14 +23,10 @@ export default function Home() {
       .catch((err) => {
         console.log(err);
       });
-
-    // setVenues(newVenues);
-    console.log("VENUES HOME : ", venues);
   };
 
   useEffect(() => {
     getVenues();
-    console.log("VENUES HOME 2 : ", venues);
   }, []);
 
   return (
@@ -39,10 +35,12 @@ export default function Home() {
         <Grid container justifyContent={"space-around"}>
           {venues.map((venue: any) => {
             return <VenueCard key={venue.id} venueProp={venue} />;
-            // return <p>Salut</p>;
           })}
         </Grid>
       )}
+      <Grid>
+        <Map apiKey={apiKey} venueKey={venueKey} />
+      </Grid>
     </Grid>
   );
 }

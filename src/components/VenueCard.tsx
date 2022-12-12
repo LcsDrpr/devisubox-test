@@ -16,7 +16,7 @@ export default function VenueCard(venueProp: any) {
   }, []);
 
   return (
-    <Grid item xs={3}>
+    <Grid item xs={12} sm={3}>
       <Card>
         <CardHeader title={venue.name}></CardHeader>
         <CardContent>

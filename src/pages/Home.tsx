@@ -5,9 +5,9 @@ import Map from "../components/Map";
 import { Grid } from "@mui/material";
 
 export default function Home() {
-  const venueKey = "Marseille";
+  const venueKey = "FR";
   const apiUrl =
-    "https://app.ticketmaster.com/discovery/v2/venues.json?keyword=" +
+    "https://app.ticketmaster.com/discovery/v2/venues.json?countryCode=" +
     venueKey +
     "&apikey=";
   const apiKey = "8X6HVGOGo28k9tEihXCuPGKj1ty0aMBd";
@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Grid container>
       {venues && (
-        <Grid container justifyContent={"space-around"}>
+        <Grid container justifyContent={"space-around"} spacing={2}>
           {venues.map((venue: any) => {
             return <VenueCard key={venue.id} venueProp={venue} />;
           })}
